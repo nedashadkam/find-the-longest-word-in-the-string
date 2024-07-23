@@ -1,0 +1,55 @@
+<!-- برنامه ای بنویسید که در یک رشته طولانی ترین کلمه را پیدا کند -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>  
+    
+    <link rel="stylesheet" type="text/css" href="ex-32.css">
+
+</head>
+
+<body>
+
+    <div>
+
+        <label for="text">Enter a string</label>
+
+        <input type="text" id="text">
+
+        <p onclick="output()">find the longest word in the string</p>
+
+        <span id="demo"></span>
+
+        
+
+    </div>
+
+    <script>
+
+        function output() {
+
+            let text = document.getElementById("text").value.split(" ");
+
+            let wordLength = 0;
+            let word = null;
+
+            for(let i = 0 ; i < text.length ; i++) {
+
+                if(wordLength < text[i].length) {
+                    wordLength = text[i].length;
+                    word = text[i];
+                }
+
+            }
+
+            document.getElementById("demo").innerHTML =  `The longest word is <span class='word'> ${word}</span>`;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
